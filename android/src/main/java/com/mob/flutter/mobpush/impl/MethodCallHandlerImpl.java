@@ -101,6 +101,9 @@ public class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
                 int endHour = call.argument("endHour");
                 int endMinute = call.argument("endMinute");
                 MobPush.setSilenceTime(startHour, startMinute, endHour, endMinute);
+            } else if (call.method.equals("setRegionId")) {
+                int regionId = call.argument("regionId");
+                MobPush.setDomainAbroad(regionId);
             } else if (call.method.equals("setTailorNotification")) {
 
             } else if (call.method.equals("removeLocalNotification")) {
