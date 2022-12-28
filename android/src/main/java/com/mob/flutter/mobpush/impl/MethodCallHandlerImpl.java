@@ -61,6 +61,7 @@ public class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
             } else if (call.method.equals("removePushReceiver")) {
                 if (removeReceiverListener != null) {
                     removeReceiverListener.onRemoveReceiver();
+		    result.success(true);
                 }
             } else if (call.method.equals("setClickNotificationToLaunchMainActivity")) {
                 boolean enable = call.argument("enable");
